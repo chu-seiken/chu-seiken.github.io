@@ -1,0 +1,23 @@
+{
+	"title": "株式会社ハッチ・ワークホームページにおけるWordPressのユーザー名の漏洩",
+	"date": "2024/04/30",
+	"detail": "hatchwork.co.jpのWordPressにはAPIへのアクセス不備が存在し、`/wp-json/wp/v2/users`にアクセスすることでユーザー名を列挙することが可能です。",
+	"cvssv3": {
+		"score": 5.3,
+		"rating": "Medium",
+		"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+	},
+	"poc": [
+		"ブラウザーを開いて、以下のURLにアクセスします。",
+		"`https://hatchwork.co.jp/wp-json/wp/v2/users`",
+		"またサブドメインについても同様にアクセスが可能です。",
+		"`https://dev2024.hatchwork.co.jp/wp-json/wp/v2/users`",
+		"`https://dev.hatchwork.co.jp/wp-json/wp/v2/users`"
+	],
+	"researcher": [
+		{
+			"organization": "不明",
+			"name": "匿名"
+		}
+	]
+}

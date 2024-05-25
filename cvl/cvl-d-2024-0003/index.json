@@ -1,0 +1,35 @@
+{
+	"title": "合同会社DMM.comのWEBサーバーにおける複数の設定不備",
+	"date": "2024/05/10",
+	"detail": "合同会社DMM.comのWEBサーバーにおいて、複数の設定不備が存在します。",
+	"cvssv3": {
+		"score": 5.3,
+		"rating": "Medium",
+		"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+	},
+	"poc": [
+		"以下のURLではいくつかのクレデンシャル情報が漏洩している恐れがあります。",
+		"https://manage.ixd.dmm.com/.htaccess",
+		"https://owner-admin.games.dmm.com/web.config",
+		"https://manage.ixd.dmm.com/.htaccess",
+		"https://pictures.dmm.com/xmlrpc.php",
+		"https://owner-admin.games.dmm.com/web.config",
+		"https://p-town.dmm.com/web.config",
+		"https://scratch.dmm.com/web.config",
+		"https://manage.ixd.dmm.com/.htaccess",
+		"https://point.dmm.com/web.config",
+		"https://online-event.dmm.com/wp-json/wp/v2/users/",
+		"https://dmg-manage.fintech.dmm.com/web.config",
+		"https://make.dmm.com/blog/wp-json/wp/v2/users/",
+		"https://admin.eikaiwa.dmm.com/test.php",
+		"https://eikaiwa.dmm.com/test.php",
+		"https://biz.eikaiwa.dmm.com/test.php",
+		"https://dev.gameplayer.digstatic.dmm.com/web.config"
+	],
+	"researcher": [
+		{
+			"organization": "不明",
+			"name": "匿名"
+		}
+	]
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="中央政策研究所 | 最新の通信情報技術を以て日本企業のリスクを分析・公表します。">
+	<meta name="keywords" content="">
+	<title>中央政策研究所 | 最新の通信情報技術を以て日本企業のリスクを分析・公表します。</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<script src="js/html5.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+</head>
+
+
+<body>
+<div id="header">
+	<div class="inner">
+		<div class="logo">
+			<a href="index.html">中央政策研究所<br><span>脅威インテリジェンス特設サイト</span></a>
+		</div>
+		<div class="info">
+			<br>
+			<p>我が国の政治・社会の諸問題に関して制作の基礎となる総合的な調査・研究を行い、社会と国家の発展に寄与します。</p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<!-- ナビ -->
+	<script src="js/navi.js"></script>
+
+	<div id="mainBanner" class="mainImg">
+		<img src="images/top.png" width="940" height="300" alt="">
+		<div class="slogan">
+			<h2>日本のサイバーセキュリティ脅威に立ち向かう</h2>
+			<h3>最新の通信情報技術を以て日本企業のリスクを分析・公表します。</h3>
+		</div>
+	</div>
+
+	
+	<section id="main">
+		<section class="content">
+			<h3 class="heading" id="vuln_title"></h3>
+			<article>
+				<p id="date"></p>
+				<p id="detail"></p>
+			</article>
+		</section>
+
+		<section class="content">
+			<h3 class="heading">CVSS V3.1 スコア</h3>
+			<article>
+				<p>当脆弱性のCVSSスコアは以下の通り算出されました。</p>
+				<table class="table">
+					<tr>
+						<th>CVSSスコア</th>
+						<td id="cvss-score"></td>
+					<tr>
+						<th>深刻度</th>
+						<td id="rating"></td>
+					</tr>
+					<tr>
+						<th>CVSSベクター</th>
+						<td id="vector"></td>
+					</tr>
+				</table>
+			</article>
+		</section>
+
+		<section class="content">
+			<h3 class="heading">PoC</h3>
+			<article id="poc"></article>
+		</section>
+
+		<section class="content">
+			<h3 class="heading">脆弱性報告者様情報</h3>
+			<article id="reseacher"></article>
+		</section>
+
+		<script>
+			let url = new URL(window.location.href);
+			let params = url.searchParams;
+			let cvl = escape(params.get('name'));
+
+			fetch ('cvl/' + cvl + '/index.json')
+				.then(response => response.json())
+				.then(data => {
+					document.getElementById('vuln_title').innerText = '【' + cvl.toUpperCase() + '】' + data.title;
+					document.getElementById('date').innerText = '報告日：' + data.date;
+					document.getElementById('detail').innerText = (data.detail);
+					(data.cvssv3.score == 0) ? document.getElementById('cvss-score').innerText = 'N/A' : document.getElementById('cvss-score').innerText = data.cvssv3.score;
+					(data.cvssv3.rating == '') ? document.getElementById('rating').innerText = 'N/A' : document.getElementById('rating').innerText = data.cvssv3.rating;
+					(data.cvssv3.vector == '') ? document.getElementById('vector').innerText = 'N/A' : document.getElementById('vector').innerText = data.cvssv3.vector;					
+					var poc = document.getElementById('poc');
+					data.poc.forEach(element => {
+						var p = document.createElement('p');
+						var flag = 0;
+						p.innerText = element;
+						p.className = 'code';
+						poc.appendChild(p);
+					});
+					var researcher = document.getElementById('reseacher');
+					data.researcher.forEach(element => {
+						var p = document.createElement('p');
+						p.innerText = element.organization + ' ' + element.name;
+						researcher.appendChild(p);
+					});
+				})
+				.catch(error => {
+					window.location.href = 'cvl.html';
+				});
+		</script>
+	</section>
+
+		
+	<!-- サイドバー -->
+	<script src="js/side.js"></script>
+</div>
+
+<!-- フッター -->
+<script src="js/footer.js"></script>
+
+</body>
+</html>

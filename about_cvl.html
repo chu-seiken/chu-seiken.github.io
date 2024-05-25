@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="中央政策研究所 | 最新の通信情報技術を以て日本企業のリスクを分析・公表します。">
+	<meta name="keywords" content="">
+	<title>中央政策研究所 | 最新の通信情報技術を以て日本企業のリスクを分析・公表します。</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<script src="js/html5.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+</head>
+
+
+<body>
+<div id="header">
+	<div class="inner">
+		<div class="logo">
+			<a href="index.html">中央政策研究所<br><span>脅威インテリジェンス特設サイト</span></a>
+		</div>
+		<div class="info">
+			<br>
+			<p>我が国の政治・社会の諸問題に関して制作の基礎となる総合的な調査・研究を行い、社会と国家の発展に寄与します。</p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<!-- ナビ -->
+	<script src="js/navi.js"></script>
+
+	<div id="mainBanner" class="mainImg">
+		<img src="images/top.png" width="940" height="300" alt="">
+		<div class="slogan">
+			<h2>日本のサイバーセキュリティ脅威に立ち向かう</h2>
+			<h3>最新の通信情報技術を以て日本企業のリスクを分析・公表します。</h3>
+		</div>
+	</div>
+
+	<section id="main">
+		<section class="content">
+			<h3 class="heading">Chuseiken Vulnability List（CVL）について</h3>
+			<article>
+				<img src="images/about.png" width="320" height="240" alt="" class="alignright frame">
+				<p>わが国における脅威となりうる脆弱性や企業の情報漏洩に対して、Chuseiken Vulnability List（以下CVLと表記する）にデータを追加することで注意喚起を行います。</p>
+				<p>CVLは合計で３つのカテゴリに分類され、「日本企業のドメインに関する脆弱性」（CVL-Domains・CVL-D）「日本企業に関連する製品に関する脆弱性」（CVL-Products・CVL-P）「インターネットにおいて漏洩した企業情報」（CVL-Leakages・CVL-L）に分けてリスティング番号が割り当てられます。CVL番号は「CVL-TYPE-YEAR-NUMBER」のような形でユニークな値が割り当てられます。</p>
+				<p>企業の脆弱性や情報漏洩に関する情報のCVLへの追加は誰でも可能で、当サイトより申請することでCVLへの追加を行うことができます。「日本企業のドメインに関する脆弱性」と「日本企業に関連する製品に関する脆弱性」に関しましては、脆弱性の報告後、当法人にて脆弱性の再現性を確認したうえで、CVLへの追加を行います。「インターネットにおいて漏洩した企業情報」に関しましては、ダークウェブやアクターコミュニティにて情報が公開されていることを確認後、CVLへの追加を行います。いずれの情報もCVLへの追加に際しまして、報告者様の協力をお願いする場合がございますので、お知りおきください。</p>
+			</article>
+		</section>
+		<section class="content">
+			<h3 class="heading">CVLとCVEおよびJVNとの違い</h3>
+			<article>
+				<img src="images/CVL-logo.png" width="320" height="240" alt="" class="alignleft frame">
+				<p>CVLに似たデータベースにはCVE（Common Vulnerabilities and Exposures）とJVN（Japan Vulnerability Notes）のようなものが存在します。これらの意味と位置づけは大いに異なることに留意してください。</p>
+				<p>CVEは米国のMITRE社が管理する脆弱性情報のデータベースであり、CVEは世界中のプロダクトに関する脆弱性情報を収集し、それを一元的に管理することを目的としています。<a href="https://cve.mitre.org/" target="_blank">詳細を確認する（https://cve.mitre.org/）</a>また、JVN（Japan Vulnerability Notes）は日本のJPCERT/CCと独立行政法人 情報処理推進機構（IPA）が管理する脆弱性情報のデータベースです。JVNは製品やサイトの脆弱性情報を収集し、それを一元的に管理することを目的としています。<a href="https://jvn.jp/nav/jvnhelp.html" target="_blank">詳細を確認する（https://jvn.jp/nav/jvnhelp.html）</a>また、両者とも開発者との調整につき公開されるか否かが問われ公開されない場合もあります。</p>
+				<p>これらに対し、CVLは「脆弱性情報や漏洩情報を公表し素早い注意喚起を行う」というポリシーの元、情報のリスティングを行います。こは実際の脅威に対する防衛手段を講じることに非常に有用です。具体的にCVEやJVNと比較して、以下３点において有用です。</p>
+				<p>１）企業の製品だけでなくドメインに関しても脆弱性情報を公開します。</p>
+				<p>２）「インターネットにおいて漏洩した企業情報」に関する情報を公開します。</p>
+				<p>３）情報を追加するに当たり、該当企業への調整がなく掲載までの時間が高速です。</p>
+			</article>
+		</section>
+
+		<section class="content">
+			<h3 class="heading">報告と掲載フローについて</h3>
+			<article>
+				<img src="images/flow.png" width="320" height="240" alt="" class="alignright frame">
+				<p>当法人へ報告していただいた情報は確認を行い次第、CVLに追加し、当サイトへの掲載を行います。</p>
+				<p>CVLは合計で３つのカテゴリに分類され、それぞれ以下のようなフローを通じて掲載がされます。詳細につきましては以下の表をご確認ください。</p>
+				<p>報告に関しまして、メールでの報告になります。報告するドキュメントにはJSON形式を利用します。規定されたフォーマットに則り報告を行ってください。また、匿名による報告も承っております。</p>
+				<p><a href="contact.html">報告を行う、もしくは詳細を確認する</a></p>
+			</article>
+			<table class="table">
+				<tr>
+					<th>CVLタイプ・備考</th>
+					<td>掲載までのフロー</td>
+				<tr>
+					<th>
+						CVL-Domains<br>
+						CVL-Products<br>
+						<br>
+						掲載まで最大1ヵ月ほど
+					</th>
+					<td>
+						1. 脆弱性の報告受理<br>
+						2. 脆弱性の再現性確認(*1)<br>
+						3. 再現性チェックの結果報告<br>
+						4. CVL-DおよびCVL-Pへの追加・掲載<br>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						CVL-Leakages<br>
+						<br><br>
+						掲載まで最大2週間ほど
+					</th>
+					<td>
+						1. 情報漏洩の報告受理<br>
+						2. 掲載された情報の収集と確認(*2)<br>
+						3. 掲載チェックの結果報告<br>
+						4. CVL-Lへの追加・掲載<br>
+					</td>
+				</tr>
+			</table>
+			<article>
+				<p>*1. 必要に応じて検証について協力を依頼する場合があります</p>
+				<p>*2. 必要に応じて掲載サイトのデータ収集の協力を依頼する場合があります</p>
+				<br>
+				<p>当法人及びデータベースはMITREやIPA、JPCERT/CCとの連携を行っておりません。製品に関する脆弱性を発見し、MITREやIPAなどの機関との調整を行う場合は、報告者様にて報告をする必要があります。</p>
+			</article>
+		</section>
+
+		<section class="content" id="gallery">
+			<h3 class="heading">ロゴギャラリー</h3>
+				<article>
+					<p>ロゴガイドラインと使用原則について</p>
+					<p>中央政策研究所およびCVLなど関連サービスのロゴ、アイコンなどは、中央政策研究所の権利物です。	中央政策研究所およびCVLなど関連サービスのロゴ、アイコンなどを使用する場合は、本ガイドラインのルールに準じて使用してください。	テレビや雑誌、その他メディアで使用する場合や、ガイドラインの不明点やご質問は、<a href="contact.html">コンタクト窓口</a>からお問い合わせください。</p>
+					<p>全てのロゴデータは、データを変形 ・加工せず、そのまま使用することを原則とします。アニメーションをつけることも禁止しております。</p>
+				</article>
+				<article class="gridWrapper">
+					<figure class="grid"><a href="images/CVL-logo.png" target="_blank"><img src="images/CVL-logo.png" width="210" height="210" alt=""></a></figure>
+				</article>
+			</section>
+		
+		</section>
+		
+	<!-- サイドバー -->
+	<script src="js/side.js"></script>
+</div>
+
+<!-- フッター -->
+<script src="js/footer.js"></script>
+
+</body>
+</html>

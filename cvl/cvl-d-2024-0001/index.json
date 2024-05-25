@@ -1,0 +1,23 @@
+{
+	"title": "エン・ジャパン株式会社が運営する複数サービスにおける反射型クロスサイトスクリプティングの脆弱性",
+	"date": "2023/11/11",
+	"detail": "エン・ジャパン株式会社が運営する、「キャリアバイト」「キャリアハック」において、反射型クロスサイトスクリプティングが確認されました。",
+	"cvssv3": {
+		"score": 0,
+		"rating": "",
+		"vector": ""
+	},
+	"poc": [
+		"careerbaito.comの検索フォームなどでは、`area_free`パラメータのサニタイズが適切に行われておりません。`<script>alert(1);</script>`など、以下のようなリクエストを用いて反射型クロスサイトスクリプティングを実行することが可能です。",
+		"https://careerbaito.com/search?area_free=%3Cscript%3Ealert%281%29%3B%3C%2Fscript%3E",
+		"\n",
+		"careerhack.en-japan.comの検索フォームなどでは、`q`パラメータのサニタイズが適切に行われておりません。以下のようなリクエストを用いて反射型クロスサイトスクリプティングを実行することが可能です。",
+		"https://careerhack.en-japan.com/search?q=%3Cscript%3Ealert%28%27XSS%27%29%3B%3C%2Fscript%3E"
+	],
+	"researcher": [
+		{
+			"organization": "不明",
+			"name": "匿名"
+		}
+	]
+}

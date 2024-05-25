@@ -1,0 +1,21 @@
+{
+	"title": "タイトル",
+	"date": "yyyy/mm/dd",
+	"detail": "脆弱性および情報漏洩に関する詳細",
+	"cvssv3": {
+		"score": CVSS V3.1 スコア,
+		"rating": "CVSS V3.1 リスク",
+		"vector": "CVSS:3.1 ベクター"
+	},
+	"poc": [
+		"詳細な手順１",
+		"詳細な手順２",
+		"..."
+	],
+	"researcher": [
+		{
+			"organization": "報告者の所属組織",
+			"name": "報告者名"
+		}
+	]
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<title>中央政策研究所 | Chusekien Vulnerability List</title>
+	
+	<meta name="description" content="脅威インテリジェンス特設サイト、CVLについて。">
+	<meta name="keywords" content="中央政策研究所">
+	
+	<meta property="og:url" content="http://vuln.chuseiken.or.jp/" />
+	<meta property="og:title" content="中央政策研究所 | Chusekien Vulnerability List" />
+	<meta property="og:description" content="Chusekien Vulnerability Listについて。" />
+	<meta property="og:site_name" content="脅威インテリジェンス特設サイト" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<script src="js/html5.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+</head>
+
+
+<body>
+<div id="header">
+	<div class="inner">
+		<div class="logo">
+			<a href="index.html">中央政策研究所<br><span>脅威インテリジェンス特設サイト</span></a>
+		</div>
+		<div class="info">
+			<br>
+			<p>我が国の政治・社会の諸問題に関して制作の基礎となる総合的な調査・研究を行い、社会と国家の発展に寄与します。</p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<!-- ナビ -->
+	<script src="js/navi.js"></script>
+
+	<div id="mainBanner" class="mainImg">
+		<img src="images/top.png" width="940" height="300" alt="">
+		<div class="slogan">
+			<h2>日本のサイバーセキュリティ脅威に立ち向かう</h2>
+			<h3>最新の通信情報技術を以て日本企業のリスクを分析・公表します。</h3>
+		</div>
+	</div>
+
+	
+	<section id="main">
+
+		<section class="content">
+			<h3 class="heading">Chuseiken Vulnability List 検索</h3>
+			<article id="searchForm">
+				<form onchange=search()>
+					<p>検索したいCVLタイプをラジオボタンから選択することで過去に発行されたChuseiken Vulnability Listからの検索や閲覧を行うことができます。</p>
+					<br>
+					<input type="radio" name="type" value="d" id="type_d" onchange="search()">
+					<label for="type_d">日本企業のドメインに関する脆弱性（CVL-Domains）</label><br>
+					<input type="radio" name="type" value="p" id="type_p" onchange="search()">
+					<label for="type_p">日本企業に関連する製品に関する脆弱性（CVL-Products）</label><br>
+					<input type="radio" name="type" value="l" id="type_l" onchange="search()">
+					<label for="type_l">インターネットにおいて漏洩した企業情報（CVL-Leakages）</label><br>
+					<script>
+						function search() {
+							var selectedType = document.querySelector('input[name="type"]:checked').value;
+							location.href = 'cvl.html?type=' + selectedType;
+						}
+					</script>
+				</form>
+				<br>
+				<article id="searchList"></article>
+				<script>
+					let url = new URL(window.location.href);
+					let params = url.searchParams;
+					let type = escape(params.get('type'));
+
+					var result = document.getElementById('searchList');
+					var tmp = []
+					var date = new Date();
+
+					fetch('./cvl/' + date.getFullYear() + '.txt')
+						.then(response => response.text())
+						.then(text => {
+							for (const line of text.split('\n')) {
+								tmp.push(line);
+							}
+							tmp.reverse();
+							var hasHead = false;
+							tmp.forEach(element => {
+								if (element != "" && element.split('-')[1] == type) {
+									if (hasHead == false) {
+										var h = document.createElement('h3');
+										h.className = 'heading';
+										if (type == 'd') h.innerText = '日本企業のドメインに関する脆弱性（CVL-Domains）の検索結果';
+										if (type == 'p') h.innerText = '日本企業に関連する製品に関する脆弱性（CVL-Products）の検索結果';
+										if (type == 'l') h.innerText = 'インターネットにおいて漏洩した企業情報（CVL-Leakages）の検索結果';
+										result.appendChild(h);
+										hasHead = true;
+									}
+									console.log(element);
+									console.log(element.split('-')[1], type)
+									var a = document.createElement('a');
+									var p = document.createElement('p');
+									a.innerHTML = element.split(',')[0].toUpperCase();
+									a.href = 'view.html?name=' + element.split(',')[0];
+									p.innerText = '　' + element.split(',')[1];
+	
+									result.appendChild(a);
+									result.appendChild(p);
+								}
+							});
+							
+						});
+					
+				</script>
+			</article>
+		</section>
+
+
+		<section class="content">
+			<h3 class="heading" id="htitle">直近で公開されたChuseiken Vulnability｜30件</h3>
+			<p id="recent">直近で発見されたCVLのリストです。</p>
+			<br>
+			<article id="list"></article>
+			<script>
+				var root = document.getElementById('list');
+				var arr = []
+				var date = new Date();
+				document.getElementById('recent').innerText = date.getFullYear() + "年度直近で新規に掲載されたChuseiken Vulnability Listです。最大で３０件のCVLが掲載されます。";
+				fetch('./cvl/' + date.getFullYear() + '.txt')
+					.then(response => response.text())
+					.then(text => {
+						for (const line of text.split('\n')) {
+							arr.push(line);
+						}
+						arr.reverse();
+						var c = 0;
+						arr.forEach(element => {
+							if (element != "") {
+								var a = document.createElement('a');
+								var p = document.createElement('p');
+								a.innerHTML = element.split(',')[0].toUpperCase();
+								a.href = 'view.html?name=' + element.split(',')[0];
+								p.innerText = '　' + element.split(',')[1];
+
+								root.appendChild(a);
+								root.appendChild(p);
+								c++;
+								if (c == 30) { return; }
+							}
+						});
+						document.getElementById('htitle').innerText = "直近で公開されたChuseiken Vulnability｜" + c + "件";
+					});
+				
+			</script>
+		</section>
+
+	</section>
+		
+		
+	<!-- サイドバー -->
+	<script src="js/side.js"></script>
+</div>
+
+<!-- フッター -->
+<script src="js/footer.js"></script>
+
+</body>
+</html>

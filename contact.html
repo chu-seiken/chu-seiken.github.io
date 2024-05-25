@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<title>中央政策研究所 | お問い合わせ</title>
+	
+	<meta name="description" content="脅威インテリジェンス特設サイト、お問い合わせ">
+	<meta name="keywords" content="中央政策研究所">
+	
+	<meta property="og:url" content="http://vuln.chuseiken.or.jp/" />
+	<meta property="og:title" content="中央政策研究所 | お問い合わせ" />
+	<meta property="og:description" content="Chusekien Vulnerability Listへの報告及びお問い合わせ。" />
+	<meta property="og:site_name" content="脅威インテリジェンス特設サイト" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<script src="js/html5.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+</head>
+
+
+<body>
+<div id="header">
+	<div class="inner">
+		<div class="logo">
+			<a href="index.html">中央政策研究所<br><span>脅威インテリジェンス特設サイト</span></a>
+		</div>
+		<div class="info">
+			<br>
+			<p>我が国の政治・社会の諸問題に関して制作の基礎となる総合的な調査・研究を行い、社会と国家の発展に寄与します。</p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<!-- ナビ -->
+	<script src="js/navi.js"></script>
+
+	<div id="mainBanner" class="mainImg">
+		<img src="images/top.png" width="940" height="300" alt="">
+		<div class="slogan">
+			<h2>日本のサイバーセキュリティ脅威に立ち向かう</h2>
+			<h3>最新の通信情報技術を以て日本企業のリスクを分析・公表します。</h3>
+		</div>
+	</div>
+
+	<section id="main">
+		<section class="content">
+			<h3 class="heading">Chuseiken Vulnability List（CVL）について</h3>
+			<article>
+				<p>「Chuseiken Vulnability List（CVL）について」「CVLとCVEおよびJVNとの違い」「報告と掲載フローについて」など一般的な情報を必要とする方は「<a href="about_cvl.html">CVLについて</a>」のページをご覧ください。</p>
+				<p>その他、ご要望・質問等ございましたら下記に従ってメールを送信してください。</p>
+			</article>
+		</section>
+		<section class="content">
+			<h3 class="heading">【重要】脆弱性および情報漏洩の報告手順のご案内</h3>
+			<article>
+				<img src="images/CVL-logo.png" width="320" height="240" alt="" class="alignleft frame">
+				<p>CVLへ報告する際には一貫してJSONフォーマットを利用する必要があります。記載にあたりテンプレートは<a href="example/template.txt" target="_blank">こちらのテンプレート</a>をご利用ください。また、記載例につきましては<a href="example/example.txt" target="_blank">こちらの記入例</a>を参考にしてください。</p>
+				<p>匿名にて報告を行う場合には「researcher」欄の「organization」と「name」を空白の状態でメールの送信を行ってください。報告に際しまして、（ハンドルネームやニックネームが法的・倫理的に掲載可能なものであれば）ハンドルネームやニックネームを用いて報告を行うことも可能です。</p>
+				<p>これらを記載した上で、「vulnアットchuseiken.or.jp」（アットをアットマークへ置き換えてください）までJSONファイルを添付しメールを送信してください。（*1）この際にタイトルに必ず「CVL報告」と記載を行ってください。また、スクリーンショットや動画がある場合にはそれらも添付し、その旨をメールの本文に記載下さい。</p>
+				<p>JSONファイルの各項目の詳細事項につきましては以下の表をご覧ください。</p>
+				<table class="table">
+					<tr>
+						<th>title</th>
+						<td>脆弱性もしくは情報漏洩の概要がわかるタイトルを記載してください。</td>
+					<tr>
+						<th>date</th>
+						<td>脆弱性もしくは情報漏洩を発見した日を記載してください。</td>
+					</tr>
+					<tr>
+						<th>details</th>
+						<td>脆弱性もしくは情報漏洩の詳細を記載してください。</td>
+					</tr>
+					<tr>
+						<th>cvssv3 score</th>
+						<td>CVSS V3.1スコア(*2)を記載してください。</td>
+					</tr>
+					<tr>
+						<th>cvssv3 rating</th>
+						<td>CVSS V3.1スコアの深刻度を記載してください。</td>
+					</tr>
+					<tr>
+						<th>cvssv3 vector</th>
+						<td>CVSS V3.1スコアのベクターを記載してください。</td>
+					</tr>
+					<tr>
+						<th>proof of concept</th>
+						<td>脆弱性もしくは情報漏洩の証拠となるコードや手順を明確に記載してください。動画などのリンクを用いることも可能です。JSONの配列構造を利用して手順ごとに分けてください。</td>
+					</tr>
+					<tr>
+						<th>reseacher</th>
+						<td>連名での報告を行う場合には配列の中にオブジェクトの形式で連ねてください。</td>
+					</tr>
+					<tr>
+						<th>researcher organization</th>
+						<td>報告者の所属組織を記載してください。空白にすることも可能です。</td>
+					</tr>
+					<tr>
+						<th>researcher name</th>
+						<td>報告者の氏名を記載してください。空白またはニックネームにすることも可能です。</td>
+					</tr>
+				</table>
+				<p>*1 メール返信の際には、Gmailを利用する場合があります。</p>
+				<p>*2 CVSS C3.1スコアは<a href="https://jvndb.jvn.jp/cvss/ja/v31.html" target="_blank">こちらのサイト</a>で計算することができます。</p>
+			</article>
+		</section>
+
+		<section class="content">
+			<h3 class="heading">掲載までのフローと期間について</h3>
+			<article>
+				<img src="images/flow.png" width="320" height="240" alt="" class="alignright frame">
+				<p>当法人へ報告していただいた情報は確認を行い次第、CVLに追加し、当サイトへの掲載を行います。詳細につきましては「<a href="about_cvl.html">CVLについて</a>」のページをご覧ください。</p>
+				<p>通常、掲載までに７営業日を要します。また、報告いただいた製品の状況によっては、非常に時間を要する場合があります。報告いただいたレポートの状況によっては追加での情報共有をお願いする場合がございますので、ご留意ください。</p>
+				<p>レポートを提出後３営業日を過ぎてもレポート受理の連絡がない場合には、お手数ですがその旨とともにメールをご送信ください。</p>
+			</article>
+		</section>
+		
+		<section class="content">
+			<h3 class="heading">その他のお問い合わせ</h3>
+			<article>
+				<p>脆弱性・情報漏洩の報告以外のお問い合わせは下記のメールアドレスにて受け付けております。お気軽にご連絡ください。こちらのメールアドレスでは中央政策研究所の組織についてのお問い合わせを受け付けておりません。中央政策研究所の組織に関するお問い合わせがございましたらお手数ですが<a href="http://chuseiken.or.jp/contact.html" target="_blank" >こちら</a>をご覧ください。</p>
+				<p>メールアドレス：vulnアットchuseiken.or.jp（アットをアットマークへ置き換えてください）</p>
+			</article>
+		</section>
+	</section>
+		
+	<!-- サイドバー -->
+	<script src="js/side.js"></script>
+</div>
+
+<!-- フッター -->
+<script src="js/footer.js"></script>
+
+</body>
+</html>

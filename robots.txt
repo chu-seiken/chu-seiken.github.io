@@ -1,0 +1,10 @@
+Disallow: /cvl/*
+Disallow: /example/*
+Disallow: /images/*
+Disallow: /js/*
+Disallow: /CNAME
+Disallow: /report.html
+Disallow: /
+
+User-agent: *
+Allow: /

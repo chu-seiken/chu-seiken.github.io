@@ -1,0 +1,24 @@
+{
+	"title": "hoge.com 検索窓のパラメータsによる反射型クロスサイトスクリプティング",
+	"date": "2020/11/01",
+	"detail": "`hoge.com`における、sパラメータにはサニタイズ不足が存在します。sへのペイロードとして`<img src=x onerror=alert(1)>`のようなものを与えるとサイト反射型クロスサイトスクリプティングを引き起こします。",
+	"cvssv3": {
+		"score": 5.4,
+		"rating": "Medium",
+		"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+	},
+	"poc": [
+		"ブラウザーを開いて、以下のURLにアクセスします。",
+		"`https://hoge.com/search?s=%3Cimg+src%3D%22%22+onerror%3Dalert%281%29%3E&submit=search`"
+	],
+	"researcher": [
+		{
+			"organization": "株式会社ほげ",
+			"name": "ふが"
+		},
+		{
+			"organization": "株式会社ぴよ",
+			"name": "ぴよ"
+		}
+	]
+}
