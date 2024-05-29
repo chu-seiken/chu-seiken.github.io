@@ -5,4 +5,3 @@ Disallow: /images/*
 Disallow: /js/*
 Disallow: /CNAME
 Disallow: /report.html
-Disallow: /
