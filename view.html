@@ -4,9 +4,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-	<meta name="description" content="中央政策研究所 | 最新の通信情報技術を以て日本企業のリスクを分析・公表します。">
-	<meta name="keywords" content="">
-	<title>中央政策研究所 | 最新の通信情報技術を以て日本企業のリスクを分析・公表します。</title>
+	
+	<title>中央政策研究所 | Chusekien Vulnerability List</title>
+	
+	<meta name="description" content="脅威インテリジェンス特設サイト、CVLについて。" id="normal-description">
+	<meta name="keywords" content="中央政策研究所">
+	
+	<meta property="og:url" content="http://vuln.chuseiken.or.jp/" />
+	
+	<meta property="og:description" content="contentの詳細" id="og-description"/>
+	<meta property="og:title" content="中央政策研究所 | CVL-ID" id="og-title"/>
+	<meta property="og:site_name" content="脅威インテリジェンス特設サイト" />
+	
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
 	<script src="js/html5.js"></script>
 	<script src="js/css3-mediaqueries.js"></script>
@@ -86,6 +95,12 @@
 			fetch ('cvl/' + cvl + '/index.json')
 				.then(response => response.json())
 				.then(data => {
+					// タイトル周り
+					document.getElementById("og-title").content = "中央政策研究所 | " + escape(cvl.toUpperCase());
+					document.getElementById('og-description').content = (data.title) + 'の詳細';
+					document.getElementById("normal-description").content = (data.title) + 'の詳細';
+					document.getElementsByTagName('title')[0].innerText = '中央政策研究所 | ' + escape(cvl.toUpperCase());
+					// 本文
 					document.getElementById('vuln_title').innerText = '【' + cvl.toUpperCase() + '】' + data.title;
 					document.getElementById('date').innerText = '報告日：' + data.date;
 					document.getElementById('detail').innerText = (data.detail);
