@@ -1,0 +1,20 @@
+{
+	"title": "ダークウェブにおける株式会社白崎コーポレーションの社内情報漏洩",
+	"date": "2024/05/28",
+	"detail": "株式会社白崎コーポレーション（shirasaki.co.jp）のランサムウエア感染及びダークウェブでの情報漏洩の恐れがあります。「8base」を名乗るアクターは該社における請求書、領収書、経理書類、個人データ、証明書、雇用契約書、大量の機密情報、機密保持契約書、個人ファイル、などのデータを取得し2024/05/31に公開すると主張しています。",
+	"cvssv3": {
+		"score": 0,
+		"rating": "",
+		"vector": ""
+	},
+	"poc": [
+		"hxxp://xb6q2aggycmlcrjtbjendcnnwpmmwbosqaugxsqb4nx6cmod3emy7sad[.]onion/company/7890453",
+		"社内情報と思わしきデータが確認できます。"
+	],
+	"researcher": [
+		{
+			"organization": "不明",
+			"name": "匿名"
+		}
+	]
+}
