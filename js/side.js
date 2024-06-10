@@ -3,8 +3,8 @@ document.write(`<aside id="sub">
 	<h3>ページリンク</h3>
 	<ul>
 		<li><a href="index.html">中央政策研究所｜脅威インテリジェンス特設サイト トップページ</a></li>
-		<li><a href="about_cvl.html">Chuseiken Vulnability Listについての説明</a></li>
-		<li><a href="cvl.html">Chuseiken Vulnability List</a></li>
+		<li><a href="about_cvl.html">Chuseiken Vulnerability Listについての説明</a></li>
+		<li><a href="cvl.html">Chuseiken Vulnerability List</a></li>
 		<li><a href="report.html">定期レポート</a></li>
 		<li><a href="contact.html">脆弱性・情報漏洩の報告窓口</a></li>
 	</ul>
