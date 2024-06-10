@@ -51,10 +51,10 @@
 	<section id="main">
 
 		<section class="content">
-			<h3 class="heading">Chuseiken Vulnability List 検索</h3>
+			<h3 class="heading">Chuseiken Vulnerability List 検索</h3>
 			<article id="searchForm">
 				<form onchange=search()>
-					<p>検索したいCVLタイプをラジオボタンから選択することで過去に発行されたChuseiken Vulnability Listからの検索や閲覧を行うことができます。</p>
+					<p>検索したいCVLタイプをラジオボタンから選択することで過去に発行されたChuseiken Vulnerability Listからの検索や閲覧を行うことができます。</p>
 					<br>
 					<input type="radio" name="type" value="d" id="type_d" onchange="search()">
 					<label for="type_d">日本企業のドメインに関する脆弱性（CVL-Domains）</label><br>
@@ -120,7 +120,7 @@
 
 
 		<section class="content">
-			<h3 class="heading" id="htitle">直近で公開されたChuseiken Vulnability｜30件</h3>
+			<h3 class="heading" id="htitle">直近で公開されたChuseiken Vulnerability｜30件</h3>
 			<p id="recent">直近で発見されたCVLのリストです。</p>
 			<br>
 			<article id="list"></article>
@@ -128,7 +128,7 @@
 				var root = document.getElementById('list');
 				var arr = []
 				var date = new Date();
-				document.getElementById('recent').innerText = date.getFullYear() + "年度直近で新規に掲載されたChuseiken Vulnability Listです。最大で３０件のCVLが掲載されます。";
+				document.getElementById('recent').innerText = date.getFullYear() + "年度直近で新規に掲載されたChuseiken Vulnerability Listです。最大で３０件のCVLが掲載されます。";
 				fetch('./cvl/' + date.getFullYear() + '.txt')
 					.then(response => response.text())
 					.then(text => {
@@ -151,7 +151,7 @@
 								if (c == 30) { return; }
 							}
 						});
-						document.getElementById('htitle').innerText = "直近で公開されたChuseiken Vulnability｜" + c + "件";
+						document.getElementById('htitle').innerText = "直近で公開されたChuseiken Vulnerability｜" + c + "件";
 					});
 				
 			</script>
