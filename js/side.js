@@ -10,7 +10,7 @@ document.write(`<aside id="sub">
 	</ul>
 </section>
 <section class="grid">
-	<h3>Chuseiken Vulnability List</h3>
+	<h3>Chuseiken Vulnerability List</h3>
 	<ul>
 		<li><a href="cvl.html?type=d">日本企業のドメインに関する脆弱性（CVL-Domains・CVL-D）
 		</a></li>
